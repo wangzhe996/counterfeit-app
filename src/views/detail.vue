@@ -54,12 +54,10 @@
       <div style="height:3rem;width:100%;padding-top:0.5rem;" @click="selectGoods()">
         <div style="margin-left:0.5rem;width:11%;float:left;margin-left: 0.5rem;font-weight: 900;font-size: 15px;">已选</div>
         <van-icon style="margin-right:0.5rem;width:10%;float:right;" size="25" name="ellipsis" />
-        <!-- <div class="van-ellipsis" style="margin-left:2rem;width:65%;float:left;margin-left: 0.5rem;font-size: 13px;">
-          <van-tag plain style="margin-bottom:0.3rem;" type="warning">白条</van-tag>
-          <span> 6期内免息，随机立减最高99元</span><br>
+        <div class="van-ellipsis" style="margin-left:2rem;width:65%;float:left;margin-left: 0.5rem;font-size: 13px;">
           <van-tag plain type="warning">赠品</van-tag>
           <span> 购太平洋，送铅笔一直。</span>
-        </div> -->
+        </div>
       </div>
       <div style="height:3rem;width:100%;padding-top:0.5rem;" @click="selectAddress()">
         <div style="margin-left:0.5rem;width:11%;float:left;margin-left: 0.5rem;font-weight: 900;font-size: 15px;">送至</div>
@@ -82,12 +80,16 @@
             <div style="font-size: 20px;font-weight: 600;">配送至</div>
             <van-icon size="20" style="float: right;margin-top: -1.4rem;" name="close"  @click="addressShow = false"  />
           </div>
-          <div style="overflow-y:auto;height: 19rem;">
-            <div v-for="item in addressList" :key="item.value" :lable="item.name" :value="item.value" @click="queryAddressName(item)" style="height: 2rem;line-height: 2rem;font-size: 15px;">
-              <van-icon v-show="item.value === '1'" color="red" name="success" />
-              <span v-show="item.value === '1'" style="margin-left:0.5rem;font-weight: 900;">{{item.name}}</span>
-              <van-icon v-show="item.value !== '1'" name="location-o" />
-              <span v-show="item.value !== '1'" style="margin-left:0.5rem;">{{item.name}}</span>
+          <div style="overflow-y:auto;height: 19rem; margin-bottom: 0.3rem;">
+            <div v-for="item in addressList" :key="item.value" :lable="item.name" :value="item.value" @click="queryAddressName(item)" style="line-height: 2rem;font-size: 15px;margin-bottom: 0.3rem;">
+              <div v-show="item.value === '1'" >
+                <van-icon color="red" name="success" />
+                <div style="font-weight: 900;margin-left: 1.5rem;margin-top: -2.1rem;">{{item.name}}</div>
+              </div>
+              <div v-show="item.value !== '1'">
+                <van-icon name="location-o"/>
+                <div style="margin-left: 1.5rem;margin-top: -2.1rem;">{{item.name}}</div>
+              </div>
             </div>
           </div>
           <van-button round style="margin-top: 2rem;" type="primary" block>选择其他地址</van-button>
@@ -113,40 +115,40 @@ export default {
         name: '北京故宫'
       }, {
         value: '2',
-        name: '天津天塔1'
+        name: '天津天塔'
       }, {
         value: '3',
         name: '上海东方明珠'
       }, {
         value: '4',
-        name: '西安钟楼'
+        name: '西安大雁塔'
       }, {
-        value: '2',
-        name: '天津天塔2'
+        value: '5',
+        name: '广州小蛮腰'
       }, {
-        value: '3',
+        value: '6',
+        name: '巴黎凯旋门'
+      }, {
+        value: '7',
+        name: '纽约城市公园'
+      }, {
+        value: '8',
+        name: '里约基督像'
+      }, {
+        value: '9',
         name: '上海东方明珠'
       }, {
-        value: '4',
+        value: '10',
+        name: '西安大明宫'
+      }, {
+        value: '11',
+        name: '眉县太白山gas多多多多多多多多多多多多多多多多多多多多多多多多'
+      }, {
+        value: '12',
         name: '西安钟楼'
       }, {
-        value: '2',
-        name: '天津天塔3'
-      }, {
-        value: '3',
-        name: '上海东方明珠'
-      }, {
-        value: '4',
-        name: '西安钟楼'
-      }, {
-        value: '2',
-        name: '天津天塔4'
-      }, {
-        value: '3',
-        name: '上海东方明珠'
-      }, {
-        value: '4',
-        name: '西安钟楼'
+        value: '13',
+        name: '西安华山'
       }],
       addressName: '北京故宫', // 已选择地址
       iconTf: true,

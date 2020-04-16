@@ -14,6 +14,20 @@
       shape="round"
       placeholder="请输入搜索关键词"
     />
+    <van-swipe class="my-swipe" height="210"  :autoplay="3000" indicator-color="hite">
+      <van-swipe-item>
+        <van-image width="100%"  src="../../static/images/timg(9).jpg" />
+      </van-swipe-item>
+      <van-swipe-item>
+        <van-image width="100%" src="../../static/images/timg(8).jpg" />
+      </van-swipe-item>
+      <van-swipe-item>
+        <van-image width="100%" src="../../static/images/timg(7).jpg" />
+      </van-swipe-item>
+      <van-swipe-item>
+        <van-image width="100%" src="../../static/images/timg(4).jpg" />
+      </van-swipe-item>
+    </van-swipe>
     <van-tabs title-active-color="#ee0a24" v-model="classifyId" swipeable sticky @click="onClassify(classifyId)">
       <van-tab v-for="index in classifyList"
         :key="index.value"
@@ -244,5 +258,12 @@ export default {
   .custom-image .van-empty__image {
     width: 90px;
     height: 90px;
+  }
+  .my-swipe .van-swipe-item {
+    color: #fff;
+    font-size: 20px;
+    line-height: 150px;
+    text-align: center;
+    background-color: #39a9ed;
   }
 </style>
