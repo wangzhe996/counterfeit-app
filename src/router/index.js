@@ -16,6 +16,8 @@ import classify from '@/views/classify/classify'
 import shoppingCart from '@/views/shoppingCart/shoppingCart'
 
 import personalCenter from '@/views/personal/personalCenter'
+import addressList from '@/views/personal/addressList'
+import addressEdit from '@/views/personal/addressEdit'
 
 Vue.use(Router)
 
@@ -62,6 +64,8 @@ export default new Router({
         component: personalCenter
       }]
     },
-    {path: '/detail', name: '详情', component: detail}
+    {path: '/detail', name: '详情', component: detail},
+    {path: '/addressList', name: '地址列表', component: addressList},
+    {path: '/addressEdit', name: '地址编辑', component: addressEdit}
   ]
 })

@@ -74,8 +74,8 @@
       :goods="goods"
     />
     <van-overlay :show="addressShow">
-      <div class="wrapper" @click="addressShow = false">
-        <div class="block" @click="addressShow = true">
+      <div class="wrapper" >
+        <div class="block">
           <div style=" margin-bottom: 1rem;text-align: center;">
             <div style="font-size: 20px;font-weight: 600;">配送至</div>
             <van-icon size="20" style="float: right;margin-top: -1.4rem;" name="close"  @click="addressShow = false"  />
@@ -92,7 +92,7 @@
               </div>
             </div>
           </div>
-          <van-button round style="margin-top: 2rem;" type="primary" block>选择其他地址</van-button>
+          <van-button round style="margin-top: 2rem;" color="#ee0a24" block @click="goAddress()">选择其他地址</van-button>
         </div>
       </div>
     </van-overlay>
@@ -309,6 +309,10 @@ export default {
   watch: {},
   // 页面自定义方法集合
   methods: {
+    // 前往地址页
+    goAddress () {
+      this.$router.push({path: 'addressList'})
+    },
     // 选择地址
     queryAddressName (item) {
       this.addressName = item.name
